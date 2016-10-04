@@ -1,4 +1,8 @@
+import java.util.Calendar;
+import java.util.Date;
+
 import Biblio.Biblioteca;
+import Biblio.DateUtility;
 import Biblio.Gestione;
 import Biblio.Libro;
 import Biblio.Utente;
@@ -25,7 +29,6 @@ public class EsMain {
 		g.registraUtente("Martina", "Debernardi", "MRTDBRN90", b);
 		g.registraUtente("Luca", "Umoretto", "MRTLCA90", b);
 		g.registraUtente("Irene", "Aimone", "MNERN90", b);
-		g.registraUtente("Luca", "Umoretto","MRTLCA90", b);
 		
 		System.out.println();
 		
@@ -68,6 +71,17 @@ public class EsMain {
 		for(Libro l: u.getLibriInPrestito().values()){
 			System.out.println(l.toString());
 		}
+		
+		System.out.println();
+		
+		DateUtility dt= new DateUtility();
+		Date currentDate= new Date();
+		
+		Calendar cal= dt.convertDateToCalendar(currentDate);
+		cal.add(Calendar.DATE, 14);
+		
+		Date dataScadenza= cal.getTime();
+		System.out.println(currentDate+" + 14 giorni = "+dataScadenza);
 		
 
 	}

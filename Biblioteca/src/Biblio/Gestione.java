@@ -1,5 +1,6 @@
 package Biblio;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Gestione {
@@ -56,8 +57,14 @@ public class Gestione {
 				
 				u.getLibriInPrestito().put(l.getSerialNumber(),l);
 				l.setCopieDisponibili((l.getCopieDisponibili())-1);
+				
+				DateUtility dt = new DateUtility();
 				Date d = new Date();
-				Prestito p = new Prestito(l,u,d,null);
+				Calendar cal = dt.convertDateToCalendar(d);
+				cal.add(Calendar.DATE, 14);
+				Date dataScadenza= cal.getTime();
+				
+				Prestito p = new Prestito(l,u,d,null,dataScadenza);
 				b.getPrestiti().add(p);
 				
 			}else 
