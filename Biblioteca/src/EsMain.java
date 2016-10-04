@@ -63,8 +63,8 @@ public class EsMain {
 			System.out.println(l.toString());
 		}
 		
-		//g.restituzioneLibro("Delitto e castigo", "Fedor Dostoevskij","Martina", "Debernardi","26/09/2016", b);
-		//g.restituzioneLibro("Cent'anni di solitudine", "Garcia Marquez","Martina", "Debernardi","26/09/2016", b);
+		g.restituzioneLibro("def2","MRTDBRN90","04/10/2016", b);
+		g.restituzioneLibro("abc1","MRTDBRN90","04/10/2016", b);
 		
 		System.out.println();
 		
