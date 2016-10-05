@@ -1,3 +1,4 @@
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -12,7 +13,7 @@ import Biblio.UtenteGiaEsiste;
 
 public class EsMain {
 
-	public static void main(String[] args) throws UtenteGiaEsiste {
+	public static void main(String[] args) throws UtenteGiaEsiste, ParseException {
 		
 		Gestione g= new Gestione();
 		Biblioteca b= new Biblioteca("Ciriè");
@@ -44,11 +45,19 @@ public class EsMain {
 		
 		System.out.println();
 		
-		g.prestaLibro("abc1", "MRTDBRN90", b);
-		g.prestaLibro("def2", "MRTDBRN90", b);
-		g.prestaLibro("ghi3", "MRTDBRN90", b);
-		g.prestaLibro("lmn4", "MRTDBRN90", b);
-		g.prestaLibro("ghi3", "MRTLCA90", b);
+		DateUtility dt= new DateUtility();
+	
+		Date dataInizioPrestito= dt.convertStringtoDate("15/09/2016");
+		Calendar cal= dt.convertDateToCalendar(dataInizioPrestito);
+		cal.add(Calendar.DATE, 14);
+		
+		Date dataScadenza= cal.getTime();
+		System.out.println(dataInizioPrestito+" + 14 giorni = "+dataScadenza);
+		
+		g.prestaLibro("def2", "MRTDBRN90", dataInizioPrestito, b);
+		g.prestaLibro("ghi3", "MRTDBRN90", dataInizioPrestito, b);
+		
+		g.prestaLibro("lmn4", "MRTLCA90", dataInizioPrestito, b);
 		
 		System.out.println();
 		
@@ -63,8 +72,11 @@ public class EsMain {
 			System.out.println(l.toString());
 		}
 		
-		g.restituzioneLibro("def2","MRTDBRN90","04/10/2016", b);
-		g.restituzioneLibro("abc1","MRTDBRN90","04/10/2016", b);
+		System.out.println();
+		
+		g.restituzioneLibro("def2","MRTDBRN90", dataInizioPrestito, dataScadenza, b);
+		
+		g.prestaLibro("abc1", "MRTDBRN90", dataInizioPrestito, b);
 		
 		System.out.println();
 		
@@ -74,14 +86,7 @@ public class EsMain {
 		
 		System.out.println();
 		
-		DateUtility dt= new DateUtility();
-		Date currentDate= new Date();
 		
-		Calendar cal= dt.convertDateToCalendar(currentDate);
-		cal.add(Calendar.DATE, 14);
-		
-		Date dataScadenza= cal.getTime();
-		System.out.println(currentDate+" + 14 giorni = "+dataScadenza);
 		
 
 	}

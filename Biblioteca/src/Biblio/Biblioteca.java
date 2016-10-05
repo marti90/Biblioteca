@@ -8,8 +8,7 @@ import java.util.Map;
 public class Biblioteca implements ValidaDati{
 	
 	private String nome="";
-	//private List<Libro> libri = new ArrayList<Libro>();
-	//private List<Utente> utenti = new ArrayList<Utente>();
+	
 	private Map<String,Libro> libri=new HashMap<String,Libro>();
 	private Map<String,Utente> utenti=new HashMap<String,Utente>();
 	private List<Prestito> prestiti = new ArrayList<Prestito>();

@@ -10,6 +10,7 @@ public class Utente implements ValidaDati{
 	private String nome="";
 	private String cognome="";
 	private String cf="";
+	private boolean scaduti=false;
 	
 	private Map<String,Libro> libriInPrestito = new HashMap<String,Libro>();
 	
@@ -76,6 +77,14 @@ public class Utente implements ValidaDati{
 	
 	public void aggiungiLibro(Libro l){
 		this.libriInPrestito.put(l.getSerialNumber(), l);
+	}
+
+	public boolean isScaduti() {
+		return scaduti;
+	}
+
+	public void setScaduti(boolean scaduti) {
+		this.scaduti = scaduti;
 	}
 
 }

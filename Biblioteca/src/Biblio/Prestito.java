@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Prestito implements ValidaDati{
 	
-	Libro l=null;
-	Utente u=null;
+	private Libro l=null;
+	private Utente u=null;
 	private Date dataPrestito;
 	private Date dataRestituzione;
 	private Date dataScadenza;
@@ -16,8 +16,8 @@ public class Prestito implements ValidaDati{
 	
 	public Prestito(Libro l, Utente u, Date dataPrestito, Date dataRestituzione, Date dataScadenza) {
 		
-		this.l = l;
-		this.u = u;
+		this.setL(l);
+		this.setU(u);
 		this.dataPrestito = dataPrestito;
 		this.dataRestituzione = dataRestituzione;
 		this.dataScadenza=dataScadenza;
@@ -51,6 +51,22 @@ public class Prestito implements ValidaDati{
 
 	public void setDataScadenza(Date dataScadenza) {
 		this.dataScadenza = dataScadenza;
+	}
+
+	public Libro getL() {
+		return l;
+	}
+
+	public void setL(Libro l) {
+		this.l = l;
+	}
+
+	public Utente getU() {
+		return u;
+	}
+
+	public void setU(Utente u) {
+		this.u = u;
 	}
 	
 	
