@@ -10,6 +10,8 @@ public class Prestito implements ValidaDati{
 	private Date dataRestituzione;
 	private Date dataScadenza;
 	
+	private int id_Prestito;
+	
 	public Prestito(){
 		
 	}
@@ -67,6 +69,14 @@ public class Prestito implements ValidaDati{
 
 	public void setU(Utente u) {
 		this.u = u;
+	}
+
+	public int getId_Prestito() {
+		return id_Prestito;
+	}
+
+	public void setId_Prestito(int id_Prestito) {
+		this.id_Prestito = id_Prestito;
 	}
 	
 	

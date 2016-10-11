@@ -12,6 +12,8 @@ public class Utente implements ValidaDati{
 	private String cf="";
 	private boolean scaduti=false;
 	
+	private int id_Utente;
+	
 	private Map<String,Libro> libriInPrestito = new HashMap<String,Libro>();
 	
 	public Utente(){
@@ -85,6 +87,14 @@ public class Utente implements ValidaDati{
 
 	public void setScaduti(boolean scaduti) {
 		this.scaduti = scaduti;
+	}
+
+	public int getId_Utente() {
+		return id_Utente;
+	}
+
+	public void setId_Utente(int id_Utente) {
+		this.id_Utente = id_Utente;
 	}
 
 }

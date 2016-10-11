@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class Biblioteca implements ValidaDati{
 	
+	private int id_Biblioteca;
 	private String nome="";
 	
 	private Map<String,Libro> libri=new HashMap<String,Libro>();
@@ -70,6 +71,14 @@ public class Biblioteca implements ValidaDati{
 			res = true;
 		}
 		return res;
+	}
+
+	public int getId_Biblioteca() {
+		return id_Biblioteca;
+	}
+
+	public void setId_Biblioteca(int id_Biblioteca) {
+		this.id_Biblioteca = id_Biblioteca;
 	}
 
 

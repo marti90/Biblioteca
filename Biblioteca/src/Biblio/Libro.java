@@ -8,6 +8,8 @@ public class Libro implements ValidaDati{
 	private int copieTotali=0;
 	private int copieDisponibili=0;
 	
+	private int id_Libro;
+	
 	public Libro(){
 		
 	}
@@ -70,6 +72,14 @@ public class Libro implements ValidaDati{
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
+	}
+
+	public int getId_Libro() {
+		return id_Libro;
+	}
+
+	public void setId_Libro(int id_Libro) {
+		this.id_Libro = id_Libro;
 	}
 
 }
